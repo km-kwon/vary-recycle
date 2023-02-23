@@ -32,7 +32,7 @@ class _RewardScreenState extends State<RewardScreen> {
               'Content-Type': 'application/json; charset=UTF-8',
             },
             body: jsonEncode([
-              {'uid': myUid!, 'type': widget.recycleType, 'image': base64Image}
+              {'uid': myUid, 'type': widget.recycleType, 'image': base64Image}
             ]),
           )
           .timeout(const Duration(seconds: 20));

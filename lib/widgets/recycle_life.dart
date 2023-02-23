@@ -12,9 +12,9 @@ class RecycleLife extends StatefulWidget {
 class _RecycleLifeState extends State<RecycleLife> {
   Future<int> LifeCount() async {
     final instance = FirebaseFirestore.instance;
-    final result = await instance.collection('user').doc('$myUid').get();
+    final result = await instance.collection('user').doc(myUid).get();
     var list = result.data();
-    var count = list?['countPerDay'];
+    var count = await list?['countPerDay'];
     return count;
   }
 
